@@ -16,8 +16,6 @@ import json
 import boto3
 import cv2
 import math
-import moviepy.editor as moviepy
-from converter import Converter
 
 
 st.set_page_config(layout='wide')
