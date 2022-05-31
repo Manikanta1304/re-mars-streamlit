@@ -189,21 +189,15 @@ def video_convert(model):
             
 # main function of the app
 def main():
-    print(str(Path('rekog_output') / 'vid'))
-    for vid in os.listdir(get_detection_folder()):
-        path = str(Path(f'{get_detection_folder()}') / vid)
-        new_path = path.replace('.mp4', '_new.mp4')
-        print(path, new_path)
-
     st.title("Property Inspection(Object Detection)")
-    
+    st.sidebar.image(Image.open('capg.png'))
+            
     source = ("Yolov5", "AWS-Rekognition")
     source_index = st.sidebar.selectbox("Select the model", range(len(source)), format_func=lambda x: source[x]) 
     
     model = False
     is_valid = False
  
-    
     if source_index == 0:
         uploaded_file = st.sidebar.file_uploader("Upload video", type=['mp4'])
         if uploaded_file is not None:
